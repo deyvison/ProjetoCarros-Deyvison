@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/toque_list"
+    android:gravity="center">
+
+    <ImageView
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:id="@+id/img_list_main"
+        android:layout_margin="16dp"
+
+        />
+
+    <TextView
+        android:textColor="@color/md_text"
+        android:textSize="18sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/text_list_main" />
+
+
+</LinearLayout>
