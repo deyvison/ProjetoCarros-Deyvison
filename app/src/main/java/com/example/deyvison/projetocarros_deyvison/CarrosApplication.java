@@ -1,6 +1,7 @@
 package com.example.deyvison.projetocarros_deyvison;
 
 import android.app.Application;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,20 +28,27 @@ public class CarrosApplication extends Application{
         carros.add(new Carro(R.drawable.db77,"Db77"));
         carros.add(new Carro(R.drawable.gallardo,"Gallardo"));
         carros.add(new Carro(R.drawable.mustang,"Mustang"));
-        carros.add(new Carro(R.drawable.paganni_zonda,"Paganni Zonda"));
+        carros.add(new Carro(R.drawable.paganni_zonda, "Paganni Zonda"));
         carros.add(new Carro(R.drawable.porsche_911,"Porsche"));
-        carros.add(new Carro(R.drawable.vyron,"Vyron"));
+        carros.add(new Carro(R.drawable.vyron, "Vyron"));
     }
 
     public List<Carro> getCarros(){
         return this.carros;
     }
 
-    public Carro adicionarCarro(){
-        Random random =  new Random();
-        Carro carro = carros.get(random.nextInt(carros.size() - 1));
-        carros.add(carro);
-        return carro;
+    public void adicionarCarro(){
+
+        if(this.carros.size()!=0){
+            int posicao = new Random().nextInt(this.carros.size());
+            Carro carro = this.carros.get(posicao);
+            this.carros.add(carro);
+            Toast.makeText(getApplicationContext(), "Carro " + carro.getNomeCarro() + " adicionado", Toast.LENGTH_SHORT).show();
+        }else{
+            criarCarrosPadrao();
+            Toast.makeText(getApplicationContext(), "Carros padrões criados", Toast.LENGTH_SHORT).show();
+        }
+
     };
 
     public void removerCarro(int position){

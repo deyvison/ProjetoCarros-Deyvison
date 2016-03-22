@@ -41,8 +41,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Carro carro = application.adicionarCarro();
-                Toast.makeText(getApplicationContext(), "Carro "+carro.getNomeCarro()+" adicionado", Toast.LENGTH_SHORT).show();
+                application.adicionarCarro();
                 adapter.notifyDataSetChanged();
             }
         });
